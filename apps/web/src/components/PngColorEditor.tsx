@@ -116,7 +116,15 @@ export default function PngColorEditor() {
       ];
 
       if (
-        colorMatch(r, g, b, targetRGB.r, targetRGB.g, targetRGB.b, tolerance)
+        colorMatch(
+          Number(r),
+          Number(g),
+          Number(b),
+          targetRGB.r,
+          targetRGB.g,
+          targetRGB.b,
+          tolerance
+        )
       ) {
         imgData.data[i] = newRGB.r;
         imgData.data[i + 1] = newRGB.g;
