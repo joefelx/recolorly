@@ -19,6 +19,8 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Upload, Palette, Download, Eye } from "lucide-react";
 import { toast } from "sonner";
+// import Image as Img from "next/image";
+import Logo from "../../public/assets/Logo.png";
 
 export default function PngColorEditor() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -159,16 +161,21 @@ export default function PngColorEditor() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
-            <div className="p-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full">
-              <Palette className="w-12 h-12 text-white" />
+            <div className="p-4 ">
+              {/* // eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="w-20 aspect-square"
+                src="/assets/Logo.png"
+                alt="alt-logo"
+              />
             </div>
           </div>
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl font-bold bg-[#FC2D35] bg-clip-text text-transparent mb-4">
             Recolorly
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -197,7 +204,7 @@ export default function PngColorEditor() {
                   <div className="space-y-4">
                     <Button
                       onClick={() => fileInputRef.current?.click()}
-                      className="w-full h-12"
+                      className="w-full h-12  cursor-pointer"
                       variant="outline"
                     >
                       <Upload className="w-4 h-4 mr-2" />
