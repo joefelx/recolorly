@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Testimonial from "../../../types/Testimonial";
+import Testimonial from "../../types/Testimonial";
 
 import { Card, CardContent } from "./ui/card";
 import { Star } from "lucide-react";
