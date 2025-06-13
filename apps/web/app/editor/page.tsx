@@ -143,7 +143,7 @@ export default function PngColorEditor() {
 
     setRecoloredImage(true);
 
-    setSelectedColor(replaceColor);
+    // setSelectedColor(replaceColor);
   };
 
   const resetImage = () => {
