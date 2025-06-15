@@ -266,7 +266,7 @@ export default function PngColorEditor() {
                         </div>
 
                         <Slider
-                          defaultValue={[33]}
+                          defaultValue={tolerance}
                           max={100}
                           step={1}
                           onValueChange={(value) => setTolerance(value)}
