@@ -164,7 +164,7 @@ export default function PngColorEditor() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white grid-pattern">
       {/* Navigation */}
       <Header subPage={true} />
 

@@ -1,1 +1,94 @@
 @import "tailwindcss";
+
+/* Grid Pattern Background */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(252, 45, 53, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(252, 45, 53, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  position: relative;
+}
+
+.grid-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(252, 45, 53, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(252, 45, 53, 0.08) 1px, transparent 1px);
+  background-size: 8px 8px;
+  pointer-events: none;
+}
+
+/* Animated Grid Pattern */
+.grid-pattern-animated {
+  background-image:
+    linear-gradient(rgba(252, 45, 53, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(252, 45, 53, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 20s linear infinite;
+  position: relative;
+}
+
+.grid-pattern-animated::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(252, 45, 53, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(252, 45, 53, 0.06) 1px, transparent 1px);
+  background-size: 12px 12px;
+  animation: gridMoveSmall 15s linear infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 60px;
+  }
+}
+
+@keyframes gridMoveSmall {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 12px 12px;
+  }
+}
+
+/* Subtle pixel-inspired pattern for hero sections */
+.pixel-pattern {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(252, 45, 53, 0.15) 1px,
+    transparent 0
+  );
+  background-size: 20px 20px;
+  position: relative;
+}
+
+.pixel-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(252, 45, 53, 0.08) 1px,
+    transparent 0
+  );
+  background-size: 8px 8px;
+  pointer-events: none;
+}
