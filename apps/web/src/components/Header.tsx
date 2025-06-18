@@ -23,7 +23,7 @@ export default function Header({ subPage = false }: { subPage?: boolean }) {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a
+            {/* <a
               href="#features"
               className="text-gray-300 hover:text-white transition-colors"
             >
@@ -40,7 +40,7 @@ export default function Header({ subPage = false }: { subPage?: boolean }) {
               className="text-gray-300 hover:text-white transition-colors"
             >
               About
-            </a>
+            </a> */}
 
             {subPage ? (
               <Link href="/">

@@ -28,13 +28,13 @@ export default function Footer() {
               >
                 <Twitter className="w-4 h-4" />
               </Button>
-              <Button
+              {/* <Button
                 size="sm"
                 variant="ghost"
                 className="text-gray-400 hover:text-white"
               >
                 <Github className="w-4 h-4" />
-              </Button>
+              </Button> */}
               <Button
                 size="sm"
                 variant="ghost"
@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          {/* <div>
             <h3 className="font-semibold mb-4">Product</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
@@ -69,9 +69,9 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
-          <div>
+          {/* <div>
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
@@ -95,9 +95,9 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
-          <div>
+          {/* <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
@@ -121,7 +121,7 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
