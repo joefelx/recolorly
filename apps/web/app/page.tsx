@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import Header from "@/components/Header";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import VideoCard from "@/components/VideoCard";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <Hero />
+
+      {/* Demo Section */}
+      <VideoCard />
 
       {/* Features Section */}
       <section id="features" className="py-20 bg-gray-900/50">
