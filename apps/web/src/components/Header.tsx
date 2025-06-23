@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -5,6 +7,7 @@ import { Button } from "./ui/button";
 
 import { ArrowLeft, ChevronDown } from "lucide-react";
 import Logo from "../../public/assets/Logo.png";
+import { HEADER_LINKS } from "@/constants/headerLinks";
 
 export default function Header({ subPage = false }: { subPage?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,24 +26,15 @@ export default function Header({ subPage = false }: { subPage?: boolean }) {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            {/* <a
-              href="#features"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#pricing"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Pricing
-            </a>
-            <a
-              href="#about"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              About
-            </a> */}
+            {HEADER_LINKS.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
 
             {subPage ? (
               <Link href="/">

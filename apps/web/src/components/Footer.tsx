@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "./ui/button";
-import { Github, Mail, Twitter } from "lucide-react";
 import Image from "next/image";
 import Logo from "../../public/assets/Logo.png";
+import { FOOTER_LINKS } from "@/constants/footerLinks";
 
 export default function Footer() {
   return (
@@ -21,27 +21,17 @@ export default function Footer() {
               everyone.
             </p>
             <div className="flex space-x-4">
-              <Button
-                size="sm"
-                variant="ghost"
-                className="text-gray-400 hover:text-white"
-              >
-                <Twitter className="w-4 h-4" />
-              </Button>
-              {/* <Button
-                size="sm"
-                variant="ghost"
-                className="text-gray-400 hover:text-white"
-              >
-                <Github className="w-4 h-4" />
-              </Button> */}
-              <Button
-                size="sm"
-                variant="ghost"
-                className="text-gray-400 hover:text-white"
-              >
-                <Mail className="w-4 h-4" />
-              </Button>
+              {FOOTER_LINKS.map((link) => (
+                <a href={link.href} key={link.name}>
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="text-gray-400 hover:text-white cursor-pointer"
+                  >
+                    <link.icon className="w-4 h-4" />
+                  </Button>
+                </a>
+              ))}
             </div>
           </div>
 

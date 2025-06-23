@@ -1,84 +1,94 @@
-# Turborepo starter
+# 🎨 Recolorly — The Smart, Privacy-First Image Recoloring Tool
 
-This Turborepo starter is maintained by the Turborepo core team.
+Recolorly is a lightweight, open-source web tool designed for creators, indie developers, and marketers to recolor logos, icons, and graphics with ease — no design skills or bulky software required.
 
-## Using this example
+🔗 **Live Demo:** [https://recolorly.vercel.app](https://recolorly.vercel.app)
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest
+## 🚀 Features
+
+✅ **Pixel-Perfect Color Picker**  
+Select any color directly from your image with precision.
+
+✅ **Real-Time Color Replacement**  
+Instantly preview color changes — no waiting, no extra exports.
+
+✅ **Tolerance Control**  
+Fine-tune how similar shades are affected using the adjustable tolerance slider.
+
+✅ **Secure & Local Processing**  
+All operations run 100% in your browser. No image is ever uploaded or stored.
+
+✅ **High-Quality Downloads**  
+Export your modified image as PNG, JPG, or SVG — without compression or quality loss.
+
+---
+
+## 🎯 Use Cases
+
+- Rebranding logos and icons.
+- Updating social media graphics to match seasonal themes.
+- Recoloring UI elements for light/dark themes.
+- Rapid A/B testing of multiple color variants.
+
+---
+
+## 🛠 Tech Stack
+
+| Technology   | Purpose                        |
+| ------------ | ------------------------------ |
+| Next.js      | Web App Framework (App Router) |
+| TypeScript   | Type Safety                    |
+| Tailwind CSS | Styling                        |
+| Canvas API   | Client-side Image Processing   |
+| shadcn/ui    | UI Components                  |
+| Sonner       | Toast Notifications            |
+| Lucide Icons | SVG Icon Set                   |
+
+---
+
+## ⚙️ Installation & Local Development
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/joefelx/recolorly.git
+cd recolorly
 ```
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+2. **Install dependencies:**
+```bash
+npm install
 ```
 
-### Develop
+3. **Start the development server:**
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+```bash
+npm run dev
 ```
 
-### Remote Caching
+4. **Open your browser and navigate to:**
+> Go to http://localhost:3000
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+---
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+# 🤝 Contributing
+We welcome contributions from the community!
+See CONTRIBUTING.md for guidelines.
 
-```
-cd my-turborepo
-npx turbo login
-```
+---
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+# 📜 License
+This project is licensed under the MIT License.
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+---
 
-```
-npx turbo link
-```
+# 💡 Future Plans (Pro SaaS Edition)
+- AI-Powered Smart Recoloring (LLM-based)
+- Batch Recoloring
+- Cloud Storage & Sync
+- Paid SaaS Tier with Pro Features
 
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+**Stay tuned for updates in the Pro version!**

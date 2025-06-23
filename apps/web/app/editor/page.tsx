@@ -29,15 +29,15 @@ export default function PngColorEditor() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [selectedColor, setSelectedColor] = useState<string>("#000000");
-  const [replaceColor, setReplaceColor] = useState<string>("#ff0000");
+  const [replaceColor, setReplaceColor] = useState<string>("#ffffff");
   const [recoloredImage, setRecoloredImage] = useState<boolean>(false);
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
   const [originalImageData, setOriginalImageData] = useState<ImageData | null>(
     null
   );
   const [tolerance, setTolerance] = useState<number[]>([60]);
-
   const [imageToDraw, setImageToDraw] = useState<HTMLImageElement | null>(null);
+  const [imageName, setImageName] = useState<string>("recolored-image.png");
 
   useEffect(() => {
     if (!canvasRef.current || !imageToDraw) return;
@@ -58,8 +58,9 @@ export default function PngColorEditor() {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    console.log(file);
     if (!file) return;
+
+    setImageName(file.name);
 
     const reader = new FileReader();
     reader.onload = (event) => {
@@ -93,9 +94,9 @@ export default function PngColorEditor() {
   };
 
   const replaceColorInCanvas = () => {
-    console.log("replace");
     const canvas = canvasRef.current;
     if (!canvas) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -142,8 +143,6 @@ export default function PngColorEditor() {
     ctx.putImageData(imgData, 0, 0);
 
     setRecoloredImage(true);
-
-    // setSelectedColor(replaceColor);
   };
 
   const resetImage = () => {
@@ -159,15 +158,13 @@ export default function PngColorEditor() {
 
   const handleDownload = () => {
     if (!canvasRef.current) return;
-    downloadCanvasAsImage(canvasRef.current, "recolored-image.png");
+
+    downloadCanvasAsImage(canvasRef.current, `recolorly_${imageName}`);
     toast.success("Image downloaded successfully!");
   };
 
   return (
     <div className="min-h-screen bg-black text-white grid-pattern">
-      {/* Navigation */}
-      <Header subPage={true} />
-
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#FC2D35]/5 via-transparent to-transparent" />
@@ -363,7 +360,7 @@ export default function PngColorEditor() {
                         </p>
                         <Button
                           onClick={() => fileInputRef.current?.click()}
-                          className="bg-[#FC2D35] hover:bg-red-600 text-white"
+                          className="bg-[#FC2D35] hover:bg-red-600 text-white cursor-pointer"
                         >
                           <Upload className="w-4 h-4 mr-2" />
                           Choose Image
@@ -385,8 +382,6 @@ export default function PngColorEditor() {
           </div>
         </div>
       </div>
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

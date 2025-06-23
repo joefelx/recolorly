@@ -1,12 +1,12 @@
 "use client";
 
-import { Palette, Zap, Shield } from "lucide-react";
 import Feature from "@/components/Feature";
 import Hero from "@/components/Hero";
 import Header from "@/components/Header";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import VideoCard from "@/components/VideoCard";
+import { FEATURES } from "@/constants/features";
 
 export default function Home() {
   return (
@@ -32,24 +32,14 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Feature
-              icon={<Palette className="w-6 h-6 text-[#FC2D35]" />}
-              title=" Precise Color Selection"
-              desc="   Click on any pixel to select its exact color for replacement
-                  with advanced tolerance controls."
-            />
-            <Feature
-              icon={<Zap className="w-6 h-6 text-[#FC2D35]" />}
-              title="Lightning Fast Processing"
-              desc="Real-time color replacement with instant preview. No waiting,
-                  no delays - see changes immediately."
-            />
-            <Feature
-              icon={<Shield className="w-6 h-6 text-[#FC2D35]" />}
-              title="Privacy First"
-              desc="All processing happens locally in your browser. Your images
-                  never leave your device."
-            />
+            {FEATURES.map((feature, index) => (
+              <Feature
+                key={index}
+                icon={<feature.icon className="w-6 h-6 text-[#FC2D35]" />}
+                title={feature.title}
+                desc={feature.desc}
+              />
+            ))}
           </div>
         </div>
       </section>
