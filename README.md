@@ -76,7 +76,7 @@ npm run dev
 
 # 🤝 Contributing
 We welcome contributions from the community!
-See CONTRIBUTING.md for guidelines.
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ---
 
